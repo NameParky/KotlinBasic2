@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity">
+
+    <!-- 툴바설정 -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:titleTextColor="@color/white"
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:text="박찬호선수의 토-크가 시작된다"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:layout_margin="0dp"
+        android:src="@drawable/chanhopark"
+        android:background="@color/black"
+        android:adjustViewBounds="true"/>
+
+    <Button
+        android:id="@+id/all_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="난 다 듣고싶어요!!"
+        android:textStyle="bold"/>
+
+    <!-- 버튼을 3개씩 놓을 예정이기 때문에 그리드 레이아웃으로 -->
+    <!-- 컬럼카운트를 3으로 한다 -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3">
+
+        <Button
+            android:id="@+id/show3"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:text="3줄만 듣고\n도망가기"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/show5"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:text="5줄만 듣고\n도망가기"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/show10"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:text="10줄만 듣고\n도망가기"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/remove_start"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:text="초반에 멍때리기"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/remove_middle"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:text="중간에 멍때리기"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/remove_end"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:text="후반에 멍때리기"
+            android:textStyle="bold"/>
+
+    </GridLayout>
+
+    <!-- 내용이 잘린채로 볼수 없게되는걸 방지하기 위해 -->
+    <!-- 스크롤 뷰로 내용을 스크롤하여 볼 수 있게함 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/talk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/talk"
+                android:scrollbarAlwaysDrawVerticalTrack="true"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
